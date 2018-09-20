@@ -1,47 +1,38 @@
 # Madeline Tatum 9.17.18
-# Dictionary project
+# Dictionary project : Cake Shop
 
-cakes = []
-cupcakes = []
-pastries = []
-orders = [cakes,cupcakes,pastries]
+def make_cake(cake_id,shape,size,flavor):
+    cake = {
+        'cake_id':cake_id,
+        'shape':shape,
+        'size':size,
+        'flavor':flavor,
+        }
+    return cake
 
-order = input("Would you like to place an order?: ")
+def make_customer(cake_id,name):
+    customer = {
+        'cake_id':cake_id,
+        'name':name,
+        }
+    return customer
 
-if order == "no":
-    print("Have a nice day!")
-else:
-    answer = input("For a cake, use the first function. For a cupcake, use the second function. For a pastry, use the third function. Continue? ")
-    if len(orders) < 1:
-        more = input("Do you have any more orders? ")
-        if more == "no":
-            print("Your order of %s has been placed." % orders)
-        else:
-            pass    # None of this is right and idk how to fix it
-    while answer == "yes":
-        def first(shape,size,flavor):
-            cake = {
-                'shape':shape,
-                'size':size,
-                'flavor':flavor,
-                }
-            cakes.append(cake)
-            return "Thank you for your cake order."
+cake_id = 0 
 
-        def second(size,flavor,frosting):
-            cupcake = {
-                'size':size,
-                'flavor':flavor,
-                'frosting':frosting,
-                }
-            cupcakes.append(cupcake)
-            return "Thank you for your cupcake order."
-
-        def third(name,flavor,toppings):
-            pastry = {
-                'name':name,
-                'flavor':flavor,
-                'toppings':toppings,
-                }
-            pastries.append(pastry)
-            return "Thank you for your pastry order."
+while True:
+    why = input("Would you like to order, pickup, or leave? ")
+    if why == "order":
+        order_name = input("What is the name for the order? ")
+        
+        cake_id = cake_id + 1
+        order_size = input("What size cake would you like? ")
+        
+        order_shape = input("What shape cake would you like? ")
+        
+        order_flavor = input("What flavor cake would you like? ")
+        
+    elif why == "pickup":
+        
+    elif why == "leave":
+        print("Have a nice day!")
+        break
