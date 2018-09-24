@@ -24,14 +24,13 @@ while True:
     why = input("Would you like to order, pickup, or leave? ")
     if why == "order":
         order_name = input("What is the name for the order? ")
-        order_name == make_customer(cake_id,'name')
+        cust = make_customer(cake_id, order_name)
         cake_id = cake_id + 1
-        order_flavor = input("What flavor cake would you like? ")
-        order_flavor == make_cake(cake_id, shape, size, 'flavor')
-        order_size = input("What size cake would you like? ")
-        order_size == make_cake( cake_id, shape, 'size', flavor)
         order_shape = input("What shape cake would you like? ")
-        order_shape == make_cake(cake_id,'shape',size,flavor)
+        order_size = input("What size cake would you like? ")
+        order_flavor = input("What flavor cake would you like? ")
+        whole = make_cake(cake_id, order_shape, order_size, order_flavor)
+        print("Thank you! Your order has been placed.")
     elif why == "pickup":
         pass
     elif why == "leave":
